@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seguros BO · Transferencias</title>
+    <link rel="stylesheet" href="assets/styles.css">
+    <script>const PAGE = 'transferencias';</script>
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="logo">
+            <span class="material-icons-outlined">shield</span>
+            <div>Seguros BO</div>
+        </div>
+        <div class="profile">
+            <div class="avatar">AB</div>
+            <div>
+                <div style="font-weight:600">Admin BO</div>
+                <div class="meta">Tesorería</div>
+            </div>
+        </div>
+        <ul class="nav">
+            <li><a href="index.html" data-nav="dashboard"><span class="material-icons-outlined">dashboard</span> Dashboard</a></li>
+            <li><a href="validacion.html" data-nav="validacion"><span class="material-icons-outlined">verified_user</span> Validación</a></li>
+            <li><a href="pagos.html" data-nav="pagos"><span class="material-icons-outlined">payment</span> Pagos masivos</a></li>
+            <li><a href="transferencias.html" data-nav="transferencias"><span class="material-icons-outlined">swap_horiz</span> Transferencias</a></li>
+            <li><a href="empleados.html" data-nav="empleados"><span class="material-icons-outlined">people</span> Empleados</a></li>
+            <li><a href="proveedores.html" data-nav="proveedores"><span class="material-icons-outlined">business</span> Proveedores</a></li>
+            <li><a href="notificaciones.html" data-nav="notificaciones"><span class="material-icons-outlined">notifications</span> Notificaciones</a></li>
+            <li><a href="seguridad.html" data-nav="seguridad"><span class="material-icons-outlined">security</span> Seguridad</a></li>
+            <li><a href="configuracion.html" data-nav="configuracion"><span class="material-icons-outlined">settings</span> Configuración</a></li>
+        </ul>
+    </nav>
+
+    <main class="main">
+        <header class="topbar">
+            <div class="topbar-left">
+                <div>
+                    <h1>Transferencias y proveedores</h1>
+                    <small>Pagos unitarios, conciliación y trazabilidad</small>
+                </div>
+            </div>
+            <div class="search">
+                <span class="material-icons-outlined">search</span>
+                <input type="text" placeholder="Buscar beneficiario" aria-label="Buscar beneficiario">
+            </div>
+            <div class="actions">
+                <div class="icon-btn">
+                    <span class="material-icons-outlined">notifications</span>
+                    <span class="badge" data-badge-notifications hidden>0</span>
+                </div>
+                <div class="icon-btn">
+                    <span class="material-icons-outlined">account_circle</span>
+                </div>
+            </div>
+        </header>
+
+        <section class="content">
+            <div class="split">
+                <div class="card">
+                    <div class="section-title"><span class="material-icons-outlined">send</span><div>Nueva transferencia</div></div>
+                    <form class="form" style="margin-top:10px;">
+                        <div class="grid cols-2" style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+                            <div>
+                                <label>Cuenta destino</label>
+                                <input type="text" placeholder="4002 08xx xxxx xxxx">
+                            </div>
+                            <div>
+                                <label>Banco</label>
+                                <select>
+                                    <option>Banco de Crédito de Bolivia (BCP)</option>
+                                    <option>Banco Nacional de Bolivia</option>
+                                    <option>Banco Mercantil Santa Cruz</option>
+                                    <option>Banco BISA</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="grid cols-2" style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+                            <div>
+                                <label>Beneficiario</label>
+                                <input type="text" placeholder="Nombre completo o razón social">
+                            </div>
+                            <div>
+                                <label>Monto (BOB)</label>
+                                <input type="number" placeholder="0.00">
+                            </div>
+                        </div>
+                        <div>
+                            <label>Concepto</label>
+                            <input type="text" placeholder="Ej: Servicio de ambulancia">
+                        </div>
+                        <div class="grid cols-2" style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+                            <div>
+                                <label>Referencia interna</label>
+                                <input type="text" value="TRX-2025-10-001">
+                            </div>
+                            <div>
+                                <label>Fecha valor</label>
+                                <input type="date" value="2025-10-31">
+                            </div>
+                        </div>
+                        <button type="button" class="btn primary"><span class="material-icons-outlined">done</span> Programar transferencia</button>
+                    </form>
+                </div>
+                <div class="card">
+                    <div class="section-title"><span class="material-icons-outlined">history</span><div>Últimas transferencias</div></div>
+                    <div id="recent-transfers" style="margin-top:10px;"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="assets/app.js"></script>
+</body>
+</html>

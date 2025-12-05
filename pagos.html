@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seguros BO · Pagos Masivos</title>
+    <link rel="stylesheet" href="assets/styles.css">
+    <script>const PAGE = 'pagos';</script>
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="logo">
+            <span class="material-icons-outlined">shield</span>
+            <div>Seguros BO</div>
+        </div>
+        <div class="profile">
+            <div class="avatar">AB</div>
+            <div>
+                <div style="font-weight:600">Admin BO</div>
+                <div class="meta">Tesorería</div>
+            </div>
+        </div>
+        <ul class="nav">
+            <li><a href="index.html" data-nav="dashboard"><span class="material-icons-outlined">dashboard</span> Dashboard</a></li>
+            <li><a href="validacion.html" data-nav="validacion"><span class="material-icons-outlined">verified_user</span> Validación</a></li>
+            <li><a href="pagos.html" data-nav="pagos"><span class="material-icons-outlined">payment</span> Pagos masivos</a></li>
+            <li><a href="transferencias.html" data-nav="transferencias"><span class="material-icons-outlined">swap_horiz</span> Transferencias</a></li>
+            <li><a href="empleados.html" data-nav="empleados"><span class="material-icons-outlined">people</span> Empleados</a></li>
+            <li><a href="proveedores.html" data-nav="proveedores"><span class="material-icons-outlined">business</span> Proveedores</a></li>
+            <li><a href="notificaciones.html" data-nav="notificaciones"><span class="material-icons-outlined">notifications</span> Notificaciones</a></li>
+            <li><a href="seguridad.html" data-nav="seguridad"><span class="material-icons-outlined">security</span> Seguridad</a></li>
+            <li><a href="configuracion.html" data-nav="configuracion"><span class="material-icons-outlined">settings</span> Configuración</a></li>
+        </ul>
+    </nav>
+
+    <main class="main">
+        <header class="topbar">
+            <div class="topbar-left">
+                <div>
+                    <h1>Pagos masivos</h1>
+                    <small>Nómina, viáticos y bonos en un solo envío</small>
+                </div>
+            </div>
+            <div class="search">
+                <span class="material-icons-outlined">search</span>
+                <input type="text" placeholder="Filtrar empleados" aria-label="Filtrar empleados">
+            </div>
+            <div class="actions">
+                <div class="icon-btn">
+                    <span class="material-icons-outlined">notifications</span>
+                    <span class="badge" data-badge-notifications hidden>0</span>
+                </div>
+                <div class="icon-btn">
+                    <span class="material-icons-outlined">account_circle</span>
+                </div>
+            </div>
+        </header>
+
+        <section class="content">
+            <div class="grid cols-3">
+                <div class="card stat">
+                    <div>
+                        <div class="stat-label">Empleados a pagar</div>
+                        <div class="stat-value" id="employees-total">-</div>
+                        <div class="stat-change text-success">Incluye contratados</div>
+                    </div>
+                    <span class="material-icons-outlined" style="color:var(--primary)">checklist</span>
+                </div>
+                <div class="card stat">
+                    <div>
+                        <div class="stat-label">Monto estimado</div>
+                        <div class="stat-value" id="payroll-total">-</div>
+                        <div class="stat-change text-warning">Antes de impuestos</div>
+                    </div>
+                    <span class="material-icons-outlined" style="color:var(--warning)">attach_money</span>
+                </div>
+                <div class="card stat">
+                    <div>
+                        <div class="stat-label">Fecha de pago</div>
+                        <div class="stat-value">30 Oct 2025</div>
+                        <div class="stat-change text-success">Límite 18:00</div>
+                    </div>
+                    <span class="material-icons-outlined" style="color:var(--success)">event</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="section-title">
+                    <span class="material-icons-outlined">playlist_add_check</span>
+                    <div>Selecciona los colaboradores</div>
+                </div>
+                <div class="list" id="payroll-list"></div>
+                <div class="grid cols-3" style="margin-top:14px; align-items:center;">
+                    <div>
+                        <label class="meta">Concepto</label>
+                        <input class="form-input" type="text" value="Pago de nómina Octubre 2025">
+                    </div>
+                    <div>
+                        <label class="meta">Referencia</label>
+                        <input class="form-input" type="text" value="PRL-2025-10">
+                    </div>
+                    <div>
+                        <label class="meta">Fecha valor</label>
+                        <input class="form-input" type="date" value="2025-10-31">
+                    </div>
+                </div>
+                <div style="display:flex; gap:10px; margin-top:14px;">
+                    <button class="btn primary" style="flex:1;"><span class="material-icons-outlined">send</span> Enviar a firma</button>
+                    <button class="btn ghost" style="flex:1;"><span class="material-icons-outlined">description</span> Descargar CSV</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="assets/app.js"></script>
+</body>
+</html>
